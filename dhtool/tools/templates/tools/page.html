@@ -1,0 +1,85 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+{% extends "base.html" %}
+{% load static %}
+{% load mptt_tags %}
+{% block content %}
+	{% include 'top-banner.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
+	{% if page_dict %}
+		<form class="page-form" action="{% url 'result' %}">
+
+				{% for page, story_list in page_dict.items %}
+					<div class="page-section" style="display:inline">
+						<h2>{{ page.page_title }}</h2>
+
+						{% if story_list %}
+							{% recursetree story_list %}
+								<div class="checkbox">
+									<label data-toggle="collapse" data-target="#{{node.id}}" aria-expanded="false"><input type="checkbox" name="story" value="{{node.id}}" autocomplete="off">{{node.story_text}}</label>
+								</div>
+									{% if not node.is_leaf_node %}
+										<ul class="collapse" id="{{node.id}}">
+											{{children}}
+										</ul>
+									{% endif %}
+							{% endrecursetree %}
+						{% else %}
+							<p>No user stories are available</p>
+						{% endif %}
+
+						<p>{{ page.off_ramp_text }}</p>
+					</div>
+
+				{% endfor %}
+
+			<div class="form-navigation">
+			    <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
+			    <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
+			    <input type="submit" class="btn btn-default pull-right" value="Show Result">
+			    <span class="clearfix"></span>
+  		</div>
+		</form>
+
+		<script type="text/javascript">
+		$(function () {
+		  var $sections = $('.page-section');
+
+		  function navigateTo(index) {
+		    // Mark the current section with the class 'current'
+		    $sections
+		      .removeClass('current')
+		      .attr('style', 'display:none')
+		      .eq(index)
+		        .addClass('current')
+		        .attr('style', 'display:inline');
+		    // Show only the navigation buttons that make sense for the current section:
+		    $('.form-navigation .previous').toggle(index > 0);
+		    var atTheEnd = index >= $sections.length - 1;
+		    $('.form-navigation .next').toggle(!atTheEnd);
+		    $('.form-navigation [type=submit]').toggle(atTheEnd);
+		  }
+
+		  function curIndex() {
+		    // Return the current index by looking at which section has the class 'current'
+		    return $sections.index($sections.filter('.current'));
+		  }
+
+		  // Previous button is easy, just go back
+		  $('.form-navigation .previous').click(function() {
+		    navigateTo(curIndex() - 1);
+		  });
+
+		  // Next button goes forward iff current block validates
+		  $('.form-navigation .next').click(function() {
+				navigateTo(curIndex() + 1);
+		  });
+
+		  navigateTo(0); // Start at the beginning
+		});
+		</script>
+
+	{% else %}
+		<p>No pages are available.</p>
+	{% endif %}
+{% endblock content %}

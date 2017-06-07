@@ -13,9 +13,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='userstories',
-            name='page',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='tools.Page'),
-        ),
+       
     ]

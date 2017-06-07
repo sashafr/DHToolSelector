@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-from .models import MappingTools
+from .models import MappingTools,Page
 from .models import UserStories
 from django.template import loader
 from .models import Inquiry
@@ -43,14 +43,45 @@ def userstory(request, id):
 		'nodes' : UserStories.objects.all(),
 	}
 	return HttpResponse(template.render(context, request))
+
 def result(request):
-#	return HttpResponse("This is the view for the results.")
-	story_id = request.GET.get('story')
-	select_story = UserStories.objects.get(pk = story_id)
-	rec_result = MappingTools.objects.filter(userstories = story_id)
+	story_ids = request.GET.getlist('story')
+	if story_ids:
+		rec_result = MappingTools.objects.all()
+	else:
+		rec_result = []
+
+	for story_id in story_ids:
+		rec_result = rec_result.filter(userstories=story_id)
+
 	template = loader.get_template('tools/result.html')
 	context = {
-		'story_id' : story_id,
 		'rec_result' : rec_result,
 	}
 	return HttpResponse(template.render(context, request))
+
+def page(request, id):
+	select_inquiry = Inquiry.objects.get(pk = id)
+	all_pages = select_inquiry.page_set.all()
+	page_dict = {}
+	for page in all_pages:
+		story_list = page.userstories_set.all()
+		page_dict[page] = story_list
+
+	template = loader.get_template('tools/page.html')
+	context = {
+		'page_dict' : page_dict,
+	}
+	return HttpResponse(template.render(context, request))
+
+#def result(request):
+#	return HttpResponse("This is the view for the results.")
+#	story_id = request.GET.get('story')
+#	select_story = UserStories.objects.get(pk = story_id)
+#	rec_result = MappingTools.objects.filter(userstories = story_id)
+#	template = loader.get_template('tools/result.html')
+#	context = {
+#		'story_id' : story_id,
+#		'rec_result' : rec_result,
+#	}
+#	return HttpResponse(template.render(context, request))
