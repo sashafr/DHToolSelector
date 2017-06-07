@@ -43,6 +43,7 @@ class UserStories(MPTTModel):
 #	id = models.AutoField(primary_key=True)
 #	title = models.CharField(max_length=50, unique=True)
 	story_text = models.CharField(max_length=200)
+	tool_tip = models.CharField(max_length=200, null=True, blank=True)
 	inquiry = models.ForeignKey(Inquiry)
 	page = models.ForeignKey(Page,default=1)
 	recommendation = models.ForeignKey(MappingTools)
