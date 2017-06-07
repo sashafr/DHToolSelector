@@ -3,12 +3,16 @@
 {% block content %}
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
-	<ul>
-		{% for res in rec_result%}
-			<li>
-				software_name : {{res.software_name}}<br />
-				<a href="{% url 'detail' res.id %}">detail</a>
-			</li>
-		{% endfor %}
-	</ul>
+	{% if rec_result %}
+		<ul>
+			{% for res in rec_result%}
+				<li>
+					software_name : {{res.software_name}}<br />
+					<a href="{% url 'detail' res.id %}">detail</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No tools are available.</p>
+	{% endif %}
 {% endblock content %}
