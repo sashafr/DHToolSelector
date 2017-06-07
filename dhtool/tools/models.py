@@ -35,10 +35,10 @@ class MappingTools(models.Model):
 class Page(models.Model):
 	page_title = models.CharField(max_length=50)
 	page_number = models.IntegerField(default=1)
-    	off_ramp_text = models.CharField(max_length=200)
-    	inquiry = models.ForeignKey(Inquiry)
-    	def __str__(self):
-        	return self.page_title
+	off_ramp_text = models.CharField(max_length=200)
+	inquiry = models.ForeignKey(Inquiry)
+	def __str__(self):
+		return self.page_title
 
 class UserStories(MPTTModel):
 #	id = models.AutoField(primary_key=True)
