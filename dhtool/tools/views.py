@@ -62,7 +62,8 @@ def result(request):
 
 def page(request, id):
 	select_inquiry = Inquiry.objects.get(pk = id)
-	all_pages = select_inquiry.page_set.all()
+	# all_pages = select_inquiry.page_set.all()
+	all_pages = select_inquiry.page_set.order_by('page_number')
 	page_dict = {}
 	for page in all_pages:
 		story_list = page.userstories_set.all()
