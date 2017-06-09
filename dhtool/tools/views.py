@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
 
 from django.http import HttpResponse
@@ -18,7 +19,7 @@ def inquiry(request):
 	return HttpResponse(template.render(context, request))
 
 def detail(request, id):
-	select_tool = MappingTools.objects.get(pk = id)
+	select_tool = get_object_or_404(MappingTools, pk = id)
 	template = loader.get_template('tools/detail.html')
 	context = {
 		'select_tool' : select_tool,
@@ -29,7 +30,8 @@ def detail(request, id):
 def result(request):
 	story_ids = request.GET.getlist('story')
 	if story_ids:
-		rec_result = MappingTools.objects.all()
+		# rec_result = MappingTools.objects.all()
+		rec_result = MappingTools.objects.order_by('id')
 	else:
 		rec_result = []
 
@@ -43,8 +45,7 @@ def result(request):
 	return HttpResponse(template.render(context, request))
 
 def page(request, id):
-	select_inquiry = Inquiry.objects.get(pk = id)
-	# all_pages = select_inquiry.page_set.all()
+	select_inquiry = get_object_or_404(Inquiry, pk = id)
 	all_pages = select_inquiry.page_set.order_by('page_number')
 	page_dict = {}
 	for page in all_pages:
