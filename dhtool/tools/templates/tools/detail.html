@@ -2,21 +2,22 @@
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
-	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
-		<p>
-			software_name : {{select_tool.software_name}}<br />
-			software_link : {{select_tool.software_link}}<br />
-			data input format : {{select_tool.data_input_format}}<br />
-			data_output format : {{select_tool.data_output_format}}<br />
-			is penn subscription : {{select_tool.is_penn_subscription}}<br />
-			cost penn : {{select_tool.cost_penn}}<br />
-			cost non penn : {{select_tool.cost_non_penn}}<br />
-			penn research guides : {{select_tool.penn_research_guides}}<br />
-			other research guides : {{select_tool.other_research_guides}}<br />
-			notes : {{select_tool.notes}}<br />		
-		<!-- <a href = "/tools/{{id}}/">{{MappingTools.software_name}}</a> -->
+		<p id="detail">
+			Software name: {{select_tool.software_name}}<br />
+			Software link: <a href="{{select_tool.software_link}}"> {{select_tool.software_link}}</a><br />
+			Data input format: {{select_tool.data_input_format}}<br />
+			Data output format: {{select_tool.data_output_format}}<br />
+			Penn subscription: {{select_tool.is_penn_subscription}}<br />
+			Cost Penn: {{select_tool.cost_penn}}<br />
+			Cost non-Penn: {{select_tool.cost_non_penn}}<br />
+			Penn research guides: <a href="{{select_tool.penn_research_guides}}"> {{select_tool.penn_research_guides}} </a><br />
+			Other research guides: <a href="{{select_tool.other_research_guides}}"> {{select_tool.other_research_guides}} </a><br />
+			Notes: {{select_tool.notes}}<br />
+		<a href = "/tools/{{id}}/">{{MappingTools.software_name}}</a>
+	</p>
 	{% else %}
-		<p>No tools are available.</p>
-	{% endif %}	
+		<p class="no_results">No tools are available.</p>
+	{% endif %}
 {% endblock content %}

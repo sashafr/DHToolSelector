@@ -2,17 +2,72 @@
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
-	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if rec_result %}
-		<ul>
+		<ul id="result">
 			{% for res in rec_result%}
 				<li>
-					software_name : {{res.software_name}}<br />
-					<a href="{% url 'detail' res.id %}">detail</a>
+					{{res.software_name}}<br />
+					<a href="{% url 'detail' res.id %}">see more detail</a>
+					<img src="{{select_tool.tool_image}"/>
 				</li>
 			{% endfor %}
 		</ul>
+
 	{% else %}
-		<p>No tools are available.</p>
+		<p class="no_results">No tools are available.</p>
 	{% endif %}
 {% endblock content %}
+
+<script type="text/javascript">
+//adding thumbnails to results
+switch(res.software_name) {
+	case: "SimplyMap";
+	var img = new Image();
+img.src = 'http://geographicresearch.com/simplymap/wp-content/uploads/2015/09/logo-x2.png';
+	case: "ArcGIS";
+	var img = new Image();
+img.src = "http://www.sulross.edu/sites/default/files//sites/default/files/users/images/rgrc_sr/arcgis-logo.png";
+case: "Palladio";
+var img = new Image();
+img.src="http://hdlab.stanford.edu/palladio/public/apple-touch-icon-precomposed.png";
+case: "Mapzen";
+var img = new Image();
+img.src="http://www.ohioboy.com/wp/wp-content/uploads/2016/02/Logo_Mapzen_1.jpg";
+case: "StoryMapJS";
+var img=new Image();
+img.src="http://4.bp.blogspot.com/-Iwt0s3hBXVY/VAAHEN1lCYI/AAAAAAAApBA/yh_DhcVs-98/s1600/Screen%2BShot%2B2014-08-29%2Bat%2B12.43.23%2BAM.png";
+case: "ESRI Storymaps";
+var img=new Image();
+img.src="http://www.iowaview.org/wp-content/uploads/2017/04/StoryMaps1.png";
+case: "Tableau";
+var img=new Image();
+img.src="https://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/092012/tableau_0.png?itok=dqLcXvp6";
+case: "Social Explorer";
+var img=new Image();
+img.src="https://global.oup.com/academic/covers/pdp/9780199799305";
+case: "PolicyMap";
+var img=new Image();
+img.src="https://www.policymap.com/wp-content/uploads/2015/10/On_light_endorsed.png";
+case: "Carto";
+var img=new Image();
+img.src=" https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/CARTO-logo.svg/2000px-CARTO-logo.svg.png";
+case: "Mapbox";
+var img=new Image();
+img.src="http://werobotics.org/wp-content/uploads/2016/09/mapbox.png";
+case: "Leaflet";
+var img=new Image();
+img.src="http://www.iotdataviz.com/wp-content/uploads/2015/11/leafletjs.jpg";
+case: "Google Maps";
+var img=new Image();
+img.src="http://vectorlogo4u.com/wp-content/uploads/2015/09/google-maps-vector-720x340.png";
+case: "Google Earth";
+var img=new Image();
+img.src="http://vignette3.wikia.nocookie.net/logopedia/images/9/9e/Google_Earth_logo.png/revision/latest?cb=20101130020151";
+case: "Fusion Tables";
+var img=new Image ();
+img.src=" https://camo.githubusercontent.com/89fad2c4d3c5314e53004aa4fd670751e3bd9bc7/687474703a2f2f69636f6e732e69636f6e617263686976652e636f6d2f69636f6e732f616c65636976652f666c6174776f6b656e2f3531322f417070732d476f6f676c652d44726976652d467573696f6e2d5461626c65732d69636f6e2e706e67";
+case: "QGIS";
+var img=new Image();
+img.src="http://i1.wp.com/qgisblog.files.wordpress.com/2016/12/qgis-logo_anita02.png";
+}
