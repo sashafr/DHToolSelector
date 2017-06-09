@@ -5,7 +5,7 @@
 {% load mptt_tags %}
 {% block content %}
 	{% include 'top-banner.html' %}
-	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if page_dict %}
 		<form class="page-form" action="{% url 'result' %}">
 
@@ -17,15 +17,27 @@
 							{% recursetree story_list %}
 								<div class="checkbox">
 									<label data-toggle="collapse" data-target="#{{node.id}}" aria-expanded="false"><input type="checkbox" name="story" value="{{node.id}}" autocomplete="off">{{node.story_text}}</label>
+									<!--toolip-->
+									<a href="#" data-toggle="tooltip" title="For more information..">
+										<img src = "https://cdn1.iconfinder.com/data/icons/education-set-4/512/information-128.png" height="10" width="10" align="top"/>
+									</a>
+									<container: node>
+									<div class="tooltip top" role="tooltip">
+										<div class="tooltip-arrow"></div>
+										<div class="tooltip-inner">
+										</div>
+									</div>
 								</div>
+
 									{% if not node.is_leaf_node %}
 										<ul class="collapse" id="{{node.id}}">
 											{{children}}
+
 										</ul>
 									{% endif %}
 							{% endrecursetree %}
 						{% else %}
-							<p>No user stories are available</p>
+							<p class="no_results">No user stories are available</p>
 						{% endif %}
 
 						<p>{{ page.off_ramp_text }}</p>
@@ -42,6 +54,9 @@
 		</form>
 
 		<script type="text/javascript">
+		$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 		$(function () {
 		  var $sections = $('.page-section');
 

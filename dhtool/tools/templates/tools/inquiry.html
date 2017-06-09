@@ -6,7 +6,7 @@
 	{% if inquiry_all %}
 		<ul>
 		{% for inquiry in inquiry_all %}
-			<li><a href="{% url 'page' inquiry.id %}">{{inquiry.name}}</a></li>
+			<li id="inquiries"><a href="{% url 'page' inquiry.id %}">{{inquiry.name}}</a></li>
 		{% endfor %}
 		</ul>
 	{% else %}

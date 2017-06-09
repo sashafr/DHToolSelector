@@ -29,7 +29,7 @@
 }
 
 #second-banner li{
-    margin: 0px 30px 0px 0px; 
+    margin: 0px 30px 0px 0px;
 }
 
 #second-banner ul {
@@ -103,4 +103,23 @@ input[type=submit]{
     width: 30px;
     height: 30px;
     margin: 15px 20px 0px 0px;
+}
+#inquiries li {
+  font-size: 20px;
+}
+#result li {
+  margin: 15px 30px 0px 10px;
+  font-size: 18px;
+}
+#result a {
+  color: #0a4096;
+  font-size: 16px
+}
+.no_results {
+  font-size: 20px;
+  margin: 20px;
+}
+#detail p {
+  font-size: 16px;
+  margin: 15px 30px 20px 10px;
 }

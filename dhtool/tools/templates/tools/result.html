@@ -4,7 +4,7 @@
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static './base.css'%}" >
 	{% if rec_result %}
-		<ul>
+		<ul id="result">
 			{% for res in rec_result%}
 				<li>
 					software_name : {{res.software_name}}<br />
