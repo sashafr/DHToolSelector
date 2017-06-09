@@ -4,6 +4,7 @@
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
+
 		<p id="detail">
 			Software name: {{select_tool.software_name}}<br />
 			Software link: <a href="{{select_tool.software_link}}"> {{select_tool.software_link}}</a><br />
