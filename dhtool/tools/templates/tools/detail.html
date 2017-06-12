@@ -4,7 +4,6 @@
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
-
 		<p id="detail">
 			Software name: {{select_tool.software_name}}<br />
 			Software link: <a href="{{select_tool.software_link}}"> {{select_tool.software_link}}</a><br />
@@ -13,10 +12,30 @@
 			Penn subscription: {{select_tool.is_penn_subscription}}<br />
 			Cost Penn: {{select_tool.cost_penn}}<br />
 			Cost non-Penn: {{select_tool.cost_non_penn}}<br />
-			Penn research guides: <a href="{{select_tool.penn_research_guides}}"> {{select_tool.penn_research_guides}} </a><br />
-			Other research guides: <a href="{{select_tool.other_research_guides}}"> {{select_tool.other_research_guides}} </a><br />
-			Notes: {{select_tool.notes}}<br />
-		<a href = "/tools/{{id}}/">{{MappingTools.software_name}}</a>
+			{% if select_tool.penn_guide_url_set.all %}
+				Penn research guides: <br />
+			{% endif %}
+			{% for link in select_tool.penn_guide_url_set.all %}
+				<ul>
+					<li><a href="{{link}}"> {{link}} </a>
+				</ul>
+			{% endfor %}
+
+			{% if select_tool.other_guide_url_set.all %}
+				Other research guides: <br />
+			{% endif %}
+			{% for link in select_tool.other_guide_url_set.all %}
+				<ul>
+					<li><a href="{{link}}"> {{link}} </a>
+				</ul>
+			{% endfor %}
+			<!-- Penn research guides: <a href="{{select_tool.penn_research_guides}}"> {{select_tool.penn_research_guides}} </a><br /> -->
+			<!-- Other research guides: <a href="{{select_tool.other_research_guides}}"> {{select_tool.other_research_guides}} </a><br /> -->
+			{% if select_tool.notes %}
+				Notes: {{select_tool.notes}}<br />
+			{% endif %}
+
+			<!-- <a href = "/tools/{{id}}/">{{MappingTools.software_name}}</a> -->
 	</p>
 	{% else %}
 		<p class="no_results">No tools are available.</p>
