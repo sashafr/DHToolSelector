@@ -29,11 +29,7 @@ def detail(request, id):
 
 def result(request):
 	story_ids = request.GET.getlist('story')
-	if story_ids:
-		# rec_result = MappingTools.objects.all()
-		rec_result = MappingTools.objects.order_by('id')
-	else:
-		rec_result = []
+	rec_result = MappingTools.objects.order_by('id')
 
 	for story_id in story_ids:
 		rec_result = rec_result.filter(userstories=story_id)

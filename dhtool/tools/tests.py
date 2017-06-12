@@ -168,7 +168,7 @@ class ResultViewTestCase(TestCase):
         self.assertContains(response, mapping_tool.software_name)
 
         #the link for tool details should be included in the response
-        detail_url = '<a href="%s">detail</a>' % reverse('detail', args=(mapping_tool.id,))
+        detail_url = '<a href="%s">see more detail</a>' % reverse('detail', args=(mapping_tool.id,))
         self.assertContains(response, detail_url)
 
     def test_filter_tools_by_stories(self):

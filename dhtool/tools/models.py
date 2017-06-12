@@ -22,15 +22,33 @@ class MappingTools(models.Model):
 	is_penn_subscription = models.NullBooleanField()
 	cost_penn = models.CharField(max_length = 256, blank=True, null = True)
 	cost_non_penn = models.CharField(max_length = 256, blank=True, null = True)
-	penn_research_guides = models.URLField(max_length = 256, blank=True, null = True)
-	other_research_guides = models.URLField(max_length = 256, blank=True, null = True)
+	# penn_research_guides = models.URLField(max_length = 256, blank=True, null = True)
+	# other_research_guides = models.URLField(max_length = 256, blank=True, null = True)
 	notes = models.CharField(max_length = 256, blank=True, null = True)
 	image = models.ImageField(null=True, upload_to='ToolImages/', height_field=None, width_field=None, max_length=100)
 #	parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
 	def __str__(self):
-		return self.software_name	
+		return self.software_name
 	class Meta:
 		verbose_name_plural = "mapping tools"
+
+class Penn_guide_url(models.Model):
+	link = models.URLField(max_length = 256, blank=True, null = True)
+	mapping_tool = models.ForeignKey(MappingTools)
+	def __str__(self):
+		return self.link
+	class Meta:
+		verbose_name = "penn research guide"
+		verbose_name_plural = "penn research guides"
+
+class Other_guide_url(models.Model):
+	link = models.URLField(max_length = 256, blank=True, null = True)
+	mapping_tool = models.ForeignKey(MappingTools)
+	def __str__(self):
+		return self.link
+	class Meta:
+		verbose_name = "other research guide"
+		verbose_name_plural = "other research guides"
 
 class Page(models.Model):
 	page_title = models.CharField(max_length=50)
