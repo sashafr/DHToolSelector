@@ -2,14 +2,14 @@
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
-	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
-		<p id="detail">
+
+		<p class="detail">
 			Software name: {{select_tool.software_name}}<br />
 			Software link: <a href="{{select_tool.software_link}}"> {{select_tool.software_link}}</a><br />
 			Data input format: {{select_tool.data_input_format}}<br />
 			Data output format: {{select_tool.data_output_format}}<br />
-			Penn subscription: {{select_tool.is_penn_subscription}}<br />
+			Penn subscription? {{select_tool.is_penn_subscription}}<br />
 			Cost Penn: {{select_tool.cost_penn}}<br />
 			Cost non-Penn: {{select_tool.cost_non_penn}}<br />
 			{% if select_tool.penn_guide_url_set.all %}
