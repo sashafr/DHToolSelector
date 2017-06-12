@@ -21,6 +21,7 @@ def inquiry(request):
 def detail(request, id):
 	select_tool = get_object_or_404(MappingTools, pk = id)
 	template = loader.get_template('tools/detail.html')
+
 	context = {
 		'select_tool' : select_tool,
 	}

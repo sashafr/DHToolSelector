@@ -23,6 +23,7 @@ class MappingToolsAdmin(admin.ModelAdmin):
         (None, {'fields': ['is_penn_subscription']}),
         (None, {'fields': ['cost_penn']}),
         (None, {'fields': ['cost_non_penn']}),
+        (None, {'fields': ['image']}),
         ('Notes', {'fields': ['notes'], 'classes': ['collapse']}),
     ]
     inlines = [Penn_guide_urlInline, Other_guide_urlInline]
