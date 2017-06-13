@@ -4,19 +4,22 @@
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if rec_result %}
-		<ul id="result">
-			{% for res in rec_result%}
-				<li>
-					{{res.software_name}}<br />
-					{% if res.image %}
-						<img src="{{res.image.url}}"/> <br />
-					{% endif %}
-					<a href="{% url 'detail' res.id %}" target="_blank">see more detail</a>
-
-				</li>
-			{% endfor %}
-		</ul>
-
+		<div style="margin-left:40px">
+			<h2>Availabe Digital Tools</h2>
+			<ol id="result">
+				{% for res in rec_result%}
+					<div class="col-md-6">
+						<li>
+							<p>{{res.software_name}}</p>
+							{% if res.image %}
+								<img src="{{res.image.url}}"/> <br />
+							{% endif %}
+							<a href="{% url 'detail' res.id %}" target="_blank">see more detail</a>
+						</li>
+					</div>
+				{% endfor %}
+			</ol>
+		</div>
 	{% else %}
 		<p class="no_results">No tools are available.</p>
 	{% endif %}
