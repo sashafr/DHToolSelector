@@ -11,14 +11,14 @@
 
 				{% for page, story_list in page_dict.items %}
 					<div class="page-section" style="display:inline">
-						<h2>{{ page.page_title }}</h2>
+						<h2 style="margin-left: 40px">{{ page.page_title }}</h2>
 
 						{% if story_list %}
 							{% recursetree story_list %}
-								<div class="checkbox">
+								<div class="checkbox" style="margin-left: 40px">
 									<label data-toggle="collapse" data-target="#{{node.id}}" aria-expanded="false"><input type="checkbox" name="story" value="{{node.id}}" autocomplete="off">{{node.story_text}}</label>
 									<!--toolip-->
-									<a href="#" data-toggle="tooltip" title="For more information..">
+									<a href="#" data-toggle="tooltip" title="{{node.tool_tip}}">
 										<img src = "https://cdn1.iconfinder.com/data/icons/education-set-4/512/information-128.png" height="10" width="10" align="top"/>
 									</a>
 									<container: node>
@@ -32,7 +32,6 @@
 									{% if not node.is_leaf_node %}
 										<ul class="collapse" id="{{node.id}}">
 											{{children}}
-
 										</ul>
 									{% endif %}
 							{% endrecursetree %}
@@ -40,14 +39,14 @@
 							<p class="no_results">No user stories are available</p>
 						{% endif %}
 
-						<p>{{ page.off_ramp_text }}</p>
+						<p style="margin-left: 40px">{{ page.off_ramp_text }}</p>
 					</div>
 
 				{% endfor %}
 
-			<div class="form-navigation">
+			<div class="form-navigation" style="margin-left: 40px; margin-right: 800px">
 			    <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
-			    <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
+					<button type="button" class="next btn btn-info pull-right">Next &gt;</button>
 			    <input type="submit" class="btn btn-default pull-right" value="Show Result">
 			    <span class="clearfix"></span>
   		</div>
