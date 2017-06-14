@@ -54,7 +54,8 @@ DHtoolsSelector for Penn Libraries
         'PORT': '',
         }
         }
-        ```
+  ```
+
 * Add configurations for static files and media files:
 
   ```python
@@ -144,5 +145,5 @@ DHtoolsSelector for Penn Libraries
   Refer to the following links for more information about how to set up a deployment server:
 
   https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi
-  
+
   https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-apache-and-mod_wsgi-on-ubuntu-16-04
