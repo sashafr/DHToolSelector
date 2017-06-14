@@ -27,13 +27,13 @@ DHtoolsSelector for Penn Libraries
 ### Create a settings file here: `dhtool/dhtool/settings.py` and add credentials.
 * Add 'mptt' and 'jquery' in INSTALLED_APPS in settings.py:
 
-      ```python
-      INSTALLED_APPS = [
-        ...
-        'mptt',
-        'jquery',
-      ]
-      ```
+    ```python
+    INSTALLED_APPS = [
+      ...
+      'mptt',
+      'jquery',
+    ]
+    ```
 * Set up database engine in settings.py. For example, if you're using MySQL,
       you can add the configurations like this:
 
