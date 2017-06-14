@@ -94,8 +94,6 @@ DHtoolsSelector for Penn Libraries
 
 * Install Apache2 & mod_wsgi:
 
-  First you'll need to install Apache2 and mod_wsgi:
-
   ```
   $ sudo apt-get update
   $ sudo apt-get install python-pip apache2 libapache2-mod-wsgi
@@ -103,11 +101,9 @@ DHtoolsSelector for Penn Libraries
 
 * Collect static files:
 
-  To collect all static content, run the command:
-
   `$ python manage.py collectstatic`
 
-* Grant write permissions to Apache user group
+* Grant write permissions to Apache user group:
 
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
@@ -117,9 +113,9 @@ DHtoolsSelector for Penn Libraries
   $ chmod -R g+w /path/to/dhtool/media/
   ```
 
-* Edit Apache server's httpd.conf file
+* Edit Apache server's httpd.conf file to configure the WSGI pass:
 
-  Edit Apache server's httpd.conf file to configure the WSGI pass. If you're using Ubuntu 16.04, open the default virtual host file:
+  If you're using Ubuntu 16.04, open the default virtual host file:
 
   `$ sudo nano /etc/apache2/sites-available/000-default.conf`
 
