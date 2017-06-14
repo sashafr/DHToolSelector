@@ -37,7 +37,8 @@ DHtoolsSelector for Penn Libraries
 * Set up database engine in settings.py. For example, if you're using MySQL,
       you can add the configurations like this:
 
-      `DATABASES = {
+      ```python
+      DATABASES = {
         'default': {
           'ENGINE': 'django.db.backends.mysql',
           'NAME': 'db_name',
@@ -46,14 +47,17 @@ DHtoolsSelector for Penn Libraries
           'HOST': 'localhost',
           'PORT': '',
         }
-      }`
+      }
+      ```
 * Add configurations for static files and media files:
 
-      `STATIC_URL = '/static/'
+      ```python
+      STATIC_URL = '/static/'
       STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
       MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
-      MEDIA_URL = '/media/'`
+      MEDIA_URL = '/media/'
+      ```
 
   You can refer to the Django tutorial for more information about adding credentials in settings.py:
 
@@ -66,6 +70,7 @@ DHtoolsSelector for Penn Libraries
     these commands:
 
       `$ python manage.py migrate`
+      
       `$ python manage.py createsuperuser`
 
 ### Run the development server and
