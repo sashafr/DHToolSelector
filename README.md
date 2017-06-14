@@ -95,6 +95,7 @@ DHtoolsSelector for Penn Libraries
   First you'll need to install Apache2 and mod_wsgi:
 
    `$ sudo apt-get update`
+
    `$ sudo apt-get install python-pip apache2 libapache2-mod-wsgi`
 
 * Collect static files:
@@ -106,7 +107,9 @@ DHtoolsSelector for Penn Libraries
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
     `$ cd /path/to/dhtool/media/`
+
     `$ chgrp -R www-data /path/to/dhtool/media/media`
+
     `$ chmod -R g+w /path/to/dhtool/media/media`
 
 * Edit Apache server's httpd.conf file
