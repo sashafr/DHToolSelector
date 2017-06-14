@@ -33,31 +33,31 @@ DHtoolsSelector for Penn Libraries
       'mptt',
       'jquery',
     ]
-    ```
-* Set up database engine in settings.py. For example, if you're using MySQL,
-      you can add the configurations like this:
 
-     ```python
-        DATABASES = {
-        'default': {
-          'ENGINE': 'django.db.backends.mysql',
-          'NAME': 'db_name',
-          'USER': 'name',
-          'PASSWORD': '',
-          'HOST': 'localhost',
-          'PORT': '',
+* Set up database engine in settings.py. For example, if you're using MySQL,
+  you can add the configurations like this:
+
+  ```python
+  DATABASES = {
+    'default': {
+      'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_name',
+        'USER': 'name',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
         }
-      }
-      ```
+        }
+
 * Add configurations for static files and media files:
 
-      ```python
-      STATIC_URL = '/static/'
-      STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+  ```python
+  STATIC_URL = '/static/'
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-      MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
-      MEDIA_URL = '/media/'
-      ```
+  MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
+  MEDIA_URL = '/media/'
+  ```
 
   You can refer to the Django tutorial for more information about adding credentials in settings.py:
 
