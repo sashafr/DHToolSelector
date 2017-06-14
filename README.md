@@ -1,6 +1,10 @@
 # DHtoolsSelector
 DHtoolsSelector for Penn Libraries
 ## Description
+This application allows users to search for digital humanity tools based on their needs. The major features include:
+* allowing users to choose from different tool projects;
+* filtering searches through a multi-page search form;
+* displaying details for each digital tool including images, links, and guides.
 
 ## Prerequisites
 * Python 2.7 or Python 3
