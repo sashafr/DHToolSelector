@@ -9,18 +9,18 @@ DHtoolsSelector for Penn Libraries
 
    Install the database you plan to use and the appropriate database bindings. For example, to use MySQL run:
 
-   `$ sudo apt-get mysql-server`
-
-   `$ sudo apt-get install libmysqlclient-dev python-dev`
-
-   `$ pip install mysqlclient>=1.3.3`
+```
+$ sudo apt-get mysql-server
+$ sudo apt-get install libmysqlclient-dev python-dev
+$ pip install mysqlclient>=1.3.3
+```
 
 ## Getting started
 ### Clone this repo:
 
 ```
-git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git`
-cd DHtoolsSelector
+$ git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git`
+$ cd DHtoolsSelector
 ```
 
 ### Install the requirements:
@@ -77,10 +77,10 @@ cd DHtoolsSelector
 
   After you've add the configurations in settings file, you'll need to run Django's migrations and create a superuser account. You can use these commands:
 
-  `$ python manage.py migrate`
-
-  `$ python manage.py createsuperuser`
-
+```
+$ python manage.py migrate
+$ python manage.py createsuperuser
+```
 ### Run the development server:
 
   You can run the development server with the command:
@@ -96,10 +96,10 @@ cd DHtoolsSelector
 
   First you'll need to install Apache2 and mod_wsgi:
 
-   `$ sudo apt-get update`
-
-   `$ sudo apt-get install python-pip apache2 libapache2-mod-wsgi`
-
+```
+$ sudo apt-get update
+$ sudo apt-get install python-pip apache2 libapache2-mod-wsgi
+```
 * Collect static files:
 
   To collect all static content, run the command:
@@ -110,11 +110,11 @@ cd DHtoolsSelector
 
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
-    `$ cd /path/to/dhtool/`
-
-    `$ chgrp -R www-data /path/to/dhtool/media/`
-
-    `$ chmod -R g+w /path/to/dhtool/media/`
+```
+$ cd /path/to/dhtool/
+$ chgrp -R www-data /path/to/dhtool/media/
+$ chmod -R g+w /path/to/dhtool/media/
+```
 
 * Edit Apache server's httpd.conf file
 
