@@ -18,10 +18,10 @@ DHtoolsSelector for Penn Libraries
 ## Getting started
 ### Clone this repo:
 
-    ```
+   ```
     $ git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git
     $ cd DHtoolsSelector
-    ```
+   ```
 
 ### Install the requirements:
 
