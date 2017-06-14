@@ -16,9 +16,12 @@ DHtoolsSelector for Penn Libraries
    `$ pip install mysqlclient>=1.3.3`
 
 ## Getting started
-### To install the project, first run:
+### Clone this repo:
 
-  `git clone [this repo url]`
+```
+git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git`
+cd DHtoolsSelector
+```
 
 ### Install the requirements:
 
@@ -107,11 +110,11 @@ DHtoolsSelector for Penn Libraries
 
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
-    `$ cd /path/to/dhtool/media/`
+    `$ cd /path/to/dhtool/`
 
-    `$ chgrp -R www-data /path/to/dhtool/media/media`
+    `$ chgrp -R www-data /path/to/dhtool/media/`
 
-    `$ chmod -R g+w /path/to/dhtool/media/media`
+    `$ chmod -R g+w /path/to/dhtool/media/`
 
 * Edit Apache server's httpd.conf file
 
