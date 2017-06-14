@@ -65,14 +65,18 @@ DHtoolsSelector for Penn Libraries
 
 ### Run default migrations and create a superuser account:
 
-    After you've add the configurations in settings file, you'll need to run
-    Django's default migrations and create a superuser account. You can use
-    these commands:
+  After you've add the configurations in settings file, you'll need to run Django's default migrations and create a superuser account. You can use these commands:
 
-      `$ python manage.py migrate`
+  `$ python manage.py migrate`
 
-      `$ python manage.py createsuperuser`
+  `$ python manage.py createsuperuser`
 
-### Run the development server and
+### Run the development server:
+
+  You can run the development server with the command:
+
+  `$ python manage.py runserver`
+
+  The default port is 8000. Visit `http://localhost:8000/admin` to add data and `http://localhost:8000/tools` to see the views.
 
 ## Setting up a deployment server
