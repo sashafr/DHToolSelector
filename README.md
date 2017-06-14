@@ -2,9 +2,8 @@
 DHtoolsSelector for Penn Libraries
 ## Description
 
-## Getting started
-### Prerequisites
-* Python 2 or Python 3
+## Prerequisites
+* Python 2.7 or Python 3
 * Pip
 * Database
 
@@ -12,8 +11,64 @@ DHtoolsSelector for Penn Libraries
 
    `$ sudo apt-get mysql-server`
 
+   `sudo apt-get install libmysqlclient-dev python-dev`
+
    `$ pip install mysqlclient>=1.3.3`
 
-## Running default migrations and creating a superuser account:
+## Getting started
+### To install the project, first run:
+
+  `git clone [this repo url]`
+
+### Install the requirements:
+
+  `pip install -r requirements.txt`
+
+### Create a settings file here: `dhtool/dhtool/settings.py` and add credentials.
+
+    * Add 'mptt' and 'jquery' in INSTALLED_APPS in settings.py:
+
+      `INSTALLED_APPS = [
+        ...
+        'mptt',
+        'jquery',
+      ]`
+
+    * Set up database engine in settings.py. For example, if you're using MySQL,
+      you can add the configurations like this:
+
+      `DATABASES = {
+        'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': 'db_name',
+          'USER': 'name',
+          'PASSWORD': '',
+          'HOST': 'localhost',
+          'PORT': '',
+        }
+      }`
+
+    * Add configurations for static files and media files:
+
+      `STATIC_URL = '/static/'
+      STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+      MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
+      MEDIA_URL = '/media/'`
+
+    You can refer to the Django tutorial for more information about adding credentials in settings.py:
+
+     [https://docs.djangoproject.com/en/1.11/intro/tutorial01/](https://docs.djangoproject.com/en/1.11/intro/tutorial01)
+
+### Run default migrations and create a superuser account:
+
+      After you've add the configurations in settings file, you'll need to run
+      Django's default migrations and create a superuser account. Use
+      these commands:
+
+      `$ python manage.py migrate`
+      `$ python manage.py createsuperuser`
+
+### Run the development server and
 
 ## Setting up a deployment server
