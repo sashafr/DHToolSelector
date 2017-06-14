@@ -19,7 +19,7 @@ DHtoolsSelector for Penn Libraries
 ### Clone this repo:
 
     ```
-    $ git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git`
+    $ git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git
     $ cd DHtoolsSelector
     ```
 
