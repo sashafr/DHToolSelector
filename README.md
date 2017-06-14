@@ -37,8 +37,8 @@ DHtoolsSelector for Penn Libraries
 * Set up database engine in settings.py. For example, if you're using MySQL,
       you can add the configurations like this:
 
-      ```python
-      DATABASES = {
+     ```python
+        DATABASES = {
         'default': {
           'ENGINE': 'django.db.backends.mysql',
           'NAME': 'db_name',
@@ -70,7 +70,7 @@ DHtoolsSelector for Penn Libraries
     these commands:
 
       `$ python manage.py migrate`
-      
+
       `$ python manage.py createsuperuser`
 
 ### Run the development server and
