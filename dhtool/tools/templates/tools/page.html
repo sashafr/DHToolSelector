@@ -5,6 +5,7 @@
 {% load mptt_tags %}
 {% block content %}
 	{% include 'top-banner.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if page_dict %}
 		<form class="page-form" action="{% url 'result' %}">
 
