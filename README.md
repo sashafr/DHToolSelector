@@ -27,11 +27,13 @@ DHtoolsSelector for Penn Libraries
 ### Create a settings file here: `dhtool/dhtool/settings.py` and add credentials.
 * Add 'mptt' and 'jquery' in INSTALLED_APPS in settings.py:
 
-      `INSTALLED_APPS = [
+      ```python
+      INSTALLED_APPS = [
         ...
         'mptt',
         'jquery',
-      ]`
+      ]
+      ```
 * Set up database engine in settings.py. For example, if you're using MySQL,
       you can add the configurations like this:
 
@@ -59,9 +61,9 @@ DHtoolsSelector for Penn Libraries
 
 ### Run default migrations and create a superuser account:
 
-  After you've add the configurations in settings file, you'll need to run
-  Django's default migrations and create a superuser account. Use
-  these commands:
+    After you've add the configurations in settings file, you'll need to run
+    Django's default migrations and create a superuser account. You can use
+    these commands:
 
       `$ python manage.py migrate`
       `$ python manage.py createsuperuser`
