@@ -86,12 +86,11 @@ DHtoolsSelector for Penn Libraries
 
   Visit `http://[server IP]:[port number]/admin/` to use the admin interface, and `http://[server IP]:[port number]/tools/` to see the views.
 
-  If you don't add server's IP, the default urls are `http://localhost:8000/tools/` and `http://localhost:8000/admin/`.
-
 ## Setting up a deployment server
    To get the application into production, you can serve the project with Apache and mod_wsgi with the following steps.
 
 * Install Apache2 & mod_wsgi:
+
   First you'll need to install Apache2 and mod_wsgi:
 
    `$ sudo apt-get update`
@@ -99,11 +98,13 @@ DHtoolsSelector for Penn Libraries
    `$ sudo apt-get install python-pip apache2 libapache2-mod-wsgi`
 
 * Collect static files:
+
   To collect all static content, run the command:
 
   `$ python manage.py collectstatic`
 
 * Grant write permissions to Apache user group
+
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
     `$ cd /path/to/dhtool/media/`
@@ -113,6 +114,7 @@ DHtoolsSelector for Penn Libraries
     `$ chmod -R g+w /path/to/dhtool/media/media`
 
 * Edit Apache server's httpd.conf file
+
   Edit Apache server's httpd.conf file to configure the WSGI pass. If you're using Ubuntu 16.04, open the default virtual host file:
 
   `$ sudo nano /etc/apache2/sites-available/000-default.conf`
