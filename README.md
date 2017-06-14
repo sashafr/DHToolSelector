@@ -17,17 +17,16 @@ DHtoolsSelector for Penn Libraries
 
 ## Getting started
 ### Clone this repo:
-
-    ```
+```
     $ git clone https://github.com/upenndigitalscholarship/DHtoolsSelector.git`
     $ cd DHtoolsSelector
     ```
-
+    
 ### Install the requirements:
 
   `$ pip install -r requirements.txt`
 
-### Create a settings file: `/path/to/dhtool/dhtool/settings.py` and add the credentials.
+### Create a settings file: `/path/to/DHtoolsSelector/dhtool/settings.py` and add the credentials.
 * Configure the allowed host:
 
    ```python
@@ -108,9 +107,9 @@ DHtoolsSelector for Penn Libraries
   The default Apache user group is www-data, and you'll need to grant write permissions to the www-data group so that your project users can upload image files in admin interface. You can run these commands:
 
   ```
-  $ cd /path/to/dhtool/
-  $ chgrp -R www-data /path/to/dhtool/media/
-  $ chmod -R g+w /path/to/dhtool/media/
+  $ cd /path/to/DHtoolsSelector/dhtool/
+  $ chgrp -R www-data /path/to/DHtoolsSelector/dhtool/media/
+  $ chmod -R g+w /path/to/DHtoolsSelector/dhtool/media/
   ```
 
 * Edit Apache server's httpd.conf file to configure the WSGI pass:
@@ -124,23 +123,23 @@ DHtoolsSelector for Penn Libraries
   ```
    <VirtualHost *:80>
    . . .
-   WSGIDaemonProcess dhtool.com python-path=/path/to/dhtool/dhtool/wsgi.py
+   WSGIDaemonProcess dhtool.com python-path=/path/to/DHtoolsSelector/dhtool/dhtool/wsgi.py
    WSGIProcessGroup dhtool.com
 
-   Alias /robots.txt /path/to/dhtool/static/robots.txt
-   Alias /favicon.ico /path/to/dhtool/static/favicon.ico
-   Alias /media/ /path/to/dhtool/media/
-   Alias /static/ /path/to/dhtool/static/
+   Alias /robots.txt /path/to/DHtoolsSelectordhtool/static/robots.txt
+   Alias /favicon.ico /path/to/DHtoolsSelector/dhtool/static/favicon.ico
+   Alias /media/ /path/to/DHtoolsSelector/dhtool/media/
+   Alias /static/ /path/to/DHtoolsSelector/dhtool/static/
 
-   <Directory /path/to/dhtool/static>
+   <Directory /path/to/DHtoolsSelector/dhtool/static>
    Require all granted
    </Directory>
 
-   <Directory /path/to/dhtool/media>
+   <Directory /path/to/DHtoolsSelector/dhtool/media>
    Require all granted
    </Directory>
 
-   <Directory /path/to/dhtool/dhtool>
+   <Directory /path/to/DHtoolsSelector/dhtool/dhtool>
    <Files wsgi.py>
    Require all granted
    </Files>
