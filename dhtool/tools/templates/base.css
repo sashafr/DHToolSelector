@@ -104,3 +104,48 @@ input[type=submit]{
     height: 30px;
     margin: 15px 20px 0px 0px;
 }
+
+#result li {
+  margin: 15px 30px 0px 10px;
+  font-size: 18px;
+}
+#result a {
+  color: #0a4096;
+  font-size: 16px
+}
+.no_results {
+  font-size: 20px;
+  text-align: center;
+}
+.detail {
+  font-size: 20px;
+  margin: 15px 30px 20px 10px;
+}
+.guide {
+  font-size: 16px;
+  margin: 15px 30px 20px 10px;
+}
+#Welcome {
+  font-size: 45px;
+  text-align: center;
+  margin-top:20px;
+}
+#h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-top:20px;
+}
+.inquiries_list {
+  font-size: 20px;
+  text-align: center;
+  margin-top:10px;
+}
+A:hover {
+  text-decoration: none;
+  color: #0e19b2;
+}
+#softwarename {
+  font-size: 30px;
+  font-family: Times New Roman, Times, serif;
+  margin-left: 10px;
+}
