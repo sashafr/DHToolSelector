@@ -8,7 +8,7 @@
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
-	<div class="container">		
+	<div class="container">
 			{% if select_tool.software_link %}
 				<div class="container">
 					<h2>{{select_tool.software_name}}</h2>
@@ -19,7 +19,6 @@
 			{% endif %}
 	<hr>
 </div>
-
 		<div class="container">
 			<table class="table table-striped" style="font-size: 20px">
 				<tbody>
@@ -85,7 +84,6 @@
 				</tbody>
 			</table>
 		</div>
-
 	{% else %}
 		<p class="no_results">No tools are available.</p>
 	{% endif %}
