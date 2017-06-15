@@ -1,47 +1,89 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
-
-		<div class="detail" style="margin-left:40px">
-			<p><a id="softwarename"href="{{select_tool.software_link}}">{{select_tool.software_name}} </a></p>
-			<p>Data input format: {{select_tool.data_input_format}}</p>
-			<p>Data output format: {{select_tool.data_output_format}}</p>
-			<p>Penn subscription: {{select_tool.is_penn_subscription}}</p>
-			<p>Cost Penn: {{select_tool.cost_penn}}</p>
-			<p>Cost non-Penn: {{select_tool.cost_non_penn}}</p>
-
-			<p>
-			{% if select_tool.penn_guide_url_set.all %}
-				Penn research guides: <br />
-				<ul>
-					{% for link in select_tool.penn_guide_url_set.all %}
-							<li class="guide"><a href="{{link}}"> {{link}} </a> </li>
-					{% endfor %}
-				</ul>
+		<div class="container">
+			{% if select_tool.software_link %}
+			<div class="container">
+				<h2>{{select_tool.software_name}}</h2>
+				<a href="{{select_tool.software_link}}" class="btn btn-info" role="button">Click here to link</a>
+				<p></p>
+			</div>
+			{% else %}
+				<h2>{{select_tool.software_name}}</h2>
 			{% endif %}
-			</p>
 
-			<p>
-			{% if select_tool.other_guide_url_set.all %}
-				Other research guides: <br />
-				<ul>
-				{% for link in select_tool.other_guide_url_set.all %}
-					<li class="guide"><a href="{{link}}"> {{link}} </a></li>
-				{% endfor %}
-			  </ul>
-			{% endif %}
-		 </p>
+			<table class="table table-striped" style="font-size: 20px">
+				<tbody>
+					<tr>
+						<td class="col-xs-1" style="text-align:left">Data input format: </td>
+						<td class="col-xs-3" style="text-align:left">{{select_tool.data_input_format}}</td>
+					</tr>
+					<tr>
+						<td class="col-xs-1" style="text-align:left">Data output format: </td>
+						<td class="col-xs-3" style="text-align:left">{{select_tool.data_output_format}}</td>
+					</tr>
+					<tr>
+						<td class="col-xs-1" style="text-align:left">Penn subscription: </td>
+						<td class="col-xs-3" style="text-align:left">{{select_tool.is_penn_subscription}}</td>
+					</tr>
+					<tr>
+						<td class="col-xs-1" style="text-align:left">Cost Penn: </td>
+						<td class="col-xs-3" style="text-align:left">{{select_tool.cost_penn}}</td>
+					</tr>
+					<tr>
+						<td class="col-xs-1" style="text-align:left">Cost non-Penn: </td>
+						<td class="col-xs-3" style="text-align:left">{{select_tool.cost_non_penn}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" style="font-size: 20px">
+				<tbody>
+					{% if select_tool.penn_guide_url_set.all %}
+						<tr>
+							<td class="col-xs-1" style="text-align:left">Penn research guides: </td>
+						</tr>
+						<tr>
+							<td>
+								<ul>
+									{% for link in select_tool.penn_guide_url_set.all %}
+											<li class="guide"><a href="{{link}}"> {{link}} </a> </li>
+									{% endfor %}
+								</ul>
+							</td>
+						</tr>
+					{% endif %}
 
-			<p>
-			{% if select_tool.notes %}
-				Notes: {{select_tool.notes}}<br />
-			{% endif %}
-		  </p>
-			<!-- <a href = "/tools/{{id}}/">{{MappingTools.software_name}}</a> -->
-	</div>
+					{% if select_tool.other_guide_url_set.all %}
+						<tr>
+							<td class="col-xs-1" style="text-align:left">Other research guides:</td>
+						</tr>
+						<tr>
+							<td>
+								<ul>
+								{% for link in select_tool.other_guide_url_set.all %}
+									<li class="guide"><a href="{{link}}"> {{link}} </a></li>
+								{% endfor %}
+							  </ul>
+							</td>
+						</tr>
+					{% endif %}
+
+					{% if select_tool.notes %}
+						<tr>
+							<td class="col-xs-1" style="text-align:left">Notes: {{select_tool.notes}}</td>
+						</tr>
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+
 	{% else %}
 		<p class="no_results">No tools are available.</p>
 	{% endif %}
