@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if select_tool %}
 
-		<div class="detail" style="margin-left:40px; font-size:20px">
+		<div class="detail" style="margin-left:40px">
 			<p><a id="softwarename"href="{{select_tool.software_link}}">{{select_tool.software_name}} </a></p>
 			<p>Data input format: {{select_tool.data_input_format}}</p>
 			<p>Data output format: {{select_tool.data_output_format}}</p>

@@ -1,15 +1,29 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
-	<h1 id="Welcome"> Welcome to the Digital Humanities Tool Selector! </h1>
-	<h2 id="h2"> What kind of tools are you looking for? </h2>
-	{% if inquiry_all %}
 
-		{% for inquiry in inquiry_all %}
-			<p class="inquiries_list"><a id="inquiries_link" href="{% url 'page' inquiry.id %}">{{inquiry.name}}</a></p>
-		{% endfor %}
+	<div class="jumbotron text-center">
+  <h1 id="Welcome"> Welcome to the Digital Humanities Tool Selector! </h1>
+  <h2 id="h2"> What kind of tools are you looking for? </h2>
+	</div>
+
+	{% if inquiry_all %}
+		<div class="container">
+			<div class="row">
+				{% for inquiry in inquiry_all %}
+					<div class="col-sm-4">
+						<p class="inquiries_list" style="text-align:left; font-size:30px">{{inquiry.name}}</p>
+						<p style="text-align:left">Brief introduction about this inquiry</p>
+						<button type="button" class="btn btn-info"><a id="inquiries_link" href="{% url 'page' inquiry.id %}">Go to this inquiry</a></button>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
 
 	{% else %}
 		<p class="no_results">No inquiries are available.</p>

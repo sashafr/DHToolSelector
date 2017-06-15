@@ -136,7 +136,7 @@ input[type=submit]{
 }
 .inquiries_list {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   margin-top:10px;
 }
 A:hover {
