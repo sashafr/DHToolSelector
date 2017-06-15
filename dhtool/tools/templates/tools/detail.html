@@ -15,17 +15,20 @@
 			{% if select_tool.penn_guide_url_set.all %}
 				Penn research guides: <br />
 			{% endif %}
+			<ul>
 			{% for link in select_tool.penn_guide_url_set.all %}
-					<p class="guide"><a href="{{link}}"> {{link}} </a> </p>
+					<li class="guide"><a href="{{link}}"> {{link}} </a> </li>
 			{% endfor %}
-
+			</ul>
 			{% if select_tool.other_guide_url_set.all %}
 				Other research guides: <br />
 			{% endif %}
 			{% for link in select_tool.other_guide_url_set.all %}
-				<p class="guide"><a href="{{link}}"> {{link}} </a>
-				</p>
+			<ul>
+				<li class="guide"><a href="{{link}}"> {{link}} </a>
+				</li>
 			{% endfor %}
+		</ul>
 			<!-- Penn research guides: <a href="{{select_tool.penn_research_guides}}"> {{select_tool.penn_research_guides}} </a><br /> -->
 			<!-- Other research guides: <a href="{{select_tool.other_research_guides}}"> {{select_tool.other_research_guides}} </a><br /> -->
 			{% if select_tool.notes %}

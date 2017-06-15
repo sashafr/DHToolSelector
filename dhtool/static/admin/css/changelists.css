@@ -1,5 +1,5 @@
 /* CHANGELISTS */
-
+/*
 #changelist {
     position: relative;
     width: 100%;
@@ -45,7 +45,7 @@
 }
 
 /* CHANGELIST TABLES */
-
+/*
 #changelist table thead th {
     padding: 0;
     white-space: nowrap;
@@ -66,7 +66,7 @@
 }
 
 /* TOOLBAR */
-
+/*
 #changelist #toolbar {
     padding: 8px 10px;
     margin-bottom: 15px;
@@ -118,7 +118,7 @@
 }
 
 /* FILTER COLUMN */
-
+/*
 #changelist-filter {
     position: absolute;
     top: 0;
@@ -187,7 +187,7 @@
 }
 
 /* DATE DRILLDOWN */
-
+/*
 .change-list ul.toplinks {
     display: block;
     float: left;
@@ -213,7 +213,7 @@
 }
 
 /* PAGINATOR */
-
+/*
 .paginator {
     font-size: 13px;
     padding-top: 10px;
@@ -259,7 +259,7 @@
 }
 
 /* ACTIONS */
-
+/*
 .filtered .actions {
     margin-right: 280px;
     border-right: none;

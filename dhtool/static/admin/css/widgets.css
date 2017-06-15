@@ -1,5 +1,5 @@
 /* SELECTOR (FILTER INTERFACE) */
-
+/*
 .selector {
     width: 800px;
     float: left;
@@ -165,7 +165,7 @@ a.active.selector-clearall:focus, a.active.selector-clearall:hover {
 }
 
 /* STACKED SELECTORS */
-
+/*
 .stacked {
     float: left;
     width: 490px;
@@ -246,7 +246,7 @@ a.active.selector-clearall:focus, a.active.selector-clearall:hover {
 }
 
 /* DATE AND TIME */
-
+/*
 p.datetime {
     line-height: 20px;
     margin: 0;
@@ -308,7 +308,7 @@ table p.datetime {
 }
 
 /* URL */
-
+/*
 p.url {
     line-height: 20px;
     margin: 0;
@@ -323,7 +323,7 @@ p.url {
 }
 
 /* FILE UPLOADS */
-
+/*
 p.file-upload {
     line-height: 20px;
     margin: 0;
@@ -353,7 +353,7 @@ span.clearable-file-input label {
 }
 
 /* CALENDARS & CLOCKS */
-
+/*
 .calendarbox, .clockbox {
     margin: 5px auto;
     font-size: 12px;
@@ -526,7 +526,7 @@ ul.timelist, .timelist li {
 }
 
 /* EDIT INLINE */
-
+/*
 .inline-deletelink {
     float: right;
     text-indent: -9999px;
@@ -541,9 +541,11 @@ ul.timelist, .timelist li {
 }
 
 /* RELATED WIDGET WRAPPER */
+/*
 .related-widget-wrapper {
     float: left;       /* display properly in form rows with multiple fields */
-    overflow: hidden;  /* clear floated contents */
+    /*
+    overflow: hidden;  /* clear floated contents 
 }
 
 .related-widget-wrapper-link {

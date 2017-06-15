@@ -1,7 +1,7 @@
 /*
     DJANGO Admin styles
 */
-
+/*
 @import url(fonts.css);
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 /* LINKS */
-
+/*
 a:link, a:visited {
     color: #447e9b;
     text-decoration: none;
@@ -42,7 +42,7 @@ a.section:focus, a.section:hover {
 }
 
 /* GLOBAL DEFAULTS */
-
+/*
 p, ol, ul, dl {
     margin: .2em 0 .8em 0;
 }
@@ -166,7 +166,7 @@ hr {
 }
 
 /* TEXT STYLES & MODIFIERS */
-
+/*
 .small {
     font-size: 11px;
 }
@@ -240,8 +240,7 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 }
 
 /* TABLES */
-
-table {
+/*table {
     border-collapse: collapse;
     border-color: #ccc;
 }
@@ -293,7 +292,7 @@ tr.alt {
 }
 
 /* SORTABLE TABLES */
-
+/*
 thead th {
     padding: 5px 10px;
     line-height: normal;
@@ -405,7 +404,7 @@ table thead th.sorted .sortoptions a.descending:hover {
 }
 
 /* FORM DEFAULTS */
-
+/*
 input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
     padding: 2px 3px;
@@ -445,7 +444,7 @@ select[multiple] {
 }
 
 /* FORM BUTTONS */
-
+/*
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
     background: #79aec8;
     padding: 10px 15px;
@@ -490,7 +489,7 @@ input[type=button][disabled].default {
 
 
 /* MODULES */
-
+/*
 .module {
     border: none;
     margin-bottom: 30px;
@@ -536,7 +535,7 @@ input[type=button][disabled].default {
 }
 
 /* MESSAGES & ERRORS */
-
+/*
 ul.messagelist {
     padding: 0;
     margin: 0;
@@ -642,7 +641,7 @@ div.system-message p.system-message-title {
 }
 
 /* BREADCRUMBS */
-
+/*
 div.breadcrumbs {
     background: #79aec8;
     padding: 10px 40px;
@@ -661,7 +660,7 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 }
 
 /* ACTION ICONS */
-
+/*
 .addlink {
     padding-left: 16px;
     background: url(../img/icon-addlink.svg) 0 1px no-repeat;
@@ -687,7 +686,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 /* OBJECT TOOLS */
-
+/*
 .object-tools {
     font-size: 10px;
     font-weight: bold;
@@ -751,7 +750,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 /* OBJECT HISTORY */
-
+/*
 table#change-history {
     width: 100%;
 }
@@ -761,7 +760,7 @@ table#change-history tbody th {
 }
 
 /* PAGE STRUCTURE */
-
+/*
 #container {
     position: relative;
     width: 100%;
@@ -795,7 +794,7 @@ table#change-history tbody th {
 }
 
 /* COLUMN TYPES */
-
+/*
 .colMS {
     margin-right: 300px;
 }
@@ -819,7 +818,7 @@ table#change-history tbody th {
 }
 
 /* HEADER */
-
+/*
 #header {
     width: auto;
     height: 40px;
@@ -888,7 +887,7 @@ table#change-history tbody th {
 }
 
 /* SIDEBAR */
-
+/*
 #content-related {
     background: #f8f8f8;
 }
@@ -965,6 +964,7 @@ table#change-history tbody th {
 }
 
 /* POPUP */
+/*
 .popup #content {
     padding: 20px;
 }

@@ -1,9 +1,10 @@
+/*
 body {
     direction: rtl;
 }
 
 /* LOGIN */
-
+/*
 .login .form-row {
     float: right;
 }
@@ -21,7 +22,7 @@ body {
 }
 
 /* GLOBAL */
-
+/*
 th {
     text-align: right;
 }
@@ -57,7 +58,7 @@ tfoot td:first-child {
 }
 
 /* LAYOUT */
-
+/*
 #user-tools {
     right: auto;
     left: 0;
@@ -84,7 +85,7 @@ div.breadcrumbs {
 }
 
 /* SORTABLE TABLES */
-
+/*
 table thead th.sorted .sortoptions {
    float: left;
 }
@@ -95,14 +96,14 @@ thead th.sorted .text {
 }
 
 /* dashboard styles */
-
+/*
 .dashboard .module table td a {
     padding-left: .6em;
     padding-right: 16px;
 }
 
 /* changelists styles */
-
+/*
 .change-list .filtered table {
     border-left: none;
     border-right: 0px none;
@@ -140,7 +141,7 @@ thead th.sorted .text {
 }
 
 /* FORMS */
-
+/*
 .aligned label {
     padding: 0 0 3px 1em;
     float: right;
@@ -197,7 +198,7 @@ fieldset .field-box {
 }
 
 /* WIDGETS */
-
+/*
 .calendarnav-previous {
     top: 0;
     left: auto;
@@ -235,7 +236,7 @@ form .form-row p.datetime {
 }
 
 /* MISC */
-
+/*
 .inline-related h2, .inline-group h2 {
     text-align: right
 }
@@ -254,7 +255,7 @@ form .form-row p.datetime {
 }
 
 /* IE7 specific bug fixes */
-
+/*
 div.colM {
     position: relative;
 }

@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 	{% include 'top-banner.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	<h1 id="Welcome"> Welcome to the Digital Humanities Tool Selector! </h1>
 	<h2 id="h2"> What kind of tools are you looking for? </h2>
 	{% if inquiry_all %}

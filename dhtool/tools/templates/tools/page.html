@@ -5,16 +5,17 @@
 {% load mptt_tags %}
 {% block content %}
 	{% include 'top-banner.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if page_dict %}
 		<form class="page-form" action="{% url 'result' %}">
 
 				{% for page, story_list in page_dict.items %}
 					<div class="page-section" style="display:inline">
-						<h2 style="margin-left: 40px">{{ page.page_title }}</h2>
+						<h2 style="margin-left: 40px; margin-top: 40px; font-family: Georgia; font-size: 35px">{{ page.page_title }}</h2>
 
 						{% if story_list %}
 							{% recursetree story_list %}
-								<div class="checkbox" style="margin-left: 40px">
+								<div class="checkbox" style="margin-left: 40px; margin-top:15px">
 									<label data-toggle="collapse" data-target="#{{node.id}}" aria-expanded="false"><input type="checkbox" name="story" value="{{node.id}}" autocomplete="off">{{node.story_text}}</label>
 									<!--toolip-->
 									<a href="#" data-toggle="tooltip" title="{{node.tool_tip}}">
@@ -38,7 +39,7 @@
 							<p class="no_results">No user stories are available</p>
 						{% endif %}
 
-						<p style="margin-left: 40px">{{ page.off_ramp_text }}</p>
+						<p style="margin-left: 40px; margin-top: 10px; font-size: 15px; font-family: Georgia">{{ page.off_ramp_text }}</p>
 					</div>
 
 				{% endfor %}
