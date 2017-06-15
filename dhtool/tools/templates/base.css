@@ -43,16 +43,16 @@
 }
 
 form {
-    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/1.4 "Trebuchet MS", Helvetica, sans-serif;
 }
 
 body {
     margin: 0px;
-    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/1.4 "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .main-content label{
-    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/1.4 "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .main-content table{
@@ -116,6 +116,7 @@ input[type=submit]{
 .no_results {
   font-size: 20px;
   text-align: center;
+  margin-top: 200px
 }
 .detail {
   font-size: 20px;
@@ -134,11 +135,6 @@ input[type=submit]{
   font-size: 30px;
   text-align: center;
   margin-top:20px;
-}
-.inquiries_list {
-  font-size: 20px;
-  text-align: center;
-  margin-top:10px;
 }
 A:hover {
   text-decoration: none;
