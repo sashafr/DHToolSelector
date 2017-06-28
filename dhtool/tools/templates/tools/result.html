@@ -14,7 +14,7 @@
 						<li>
 							<p><a href="{% url 'detail' res.id %}">{{res.software_name}}</a></p>
 							{% if res.image %}
-								<a href="{% url 'detail' res.id %}"><img src="{{res.image.url}}" width="304" height="236"/></a> <br />
+								<a href="{% url 'detail' res.id %}"><img src="{{res.image.url}}" height="60px"/></a> <br />
 							{% endif %}
 							<a href="{% url 'detail' res.id %}" target="_blank">View Tool Details</a>
 							<hr>
