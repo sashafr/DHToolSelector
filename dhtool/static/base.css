@@ -1,0 +1,177 @@
+#banner-top {
+    background: #031b51;
+    height: 100px;
+    width: 100%;
+}
+#banner-top ul {
+    float: right;
+    list-style-type: none;
+    margin: 10px 10px 10px 0px;
+}
+#banner-top li{
+    display: inline;
+    margin: 0px 25px 0px 0px;
+}
+#banner-top a {
+    color: #eaeaea;
+    text-decoration: none;
+}
+
+#second-banner {
+    background:#031131;
+    height: 50px;
+    width: 100%;
+}
+
+#second-banner a {
+    background-color: #b92b2b;
+    color: #FFFFFF;
+}
+
+#second-banner li{
+    margin: 0px 30px 0px 0px;
+}
+
+#second-banner ul {
+    float: right;
+}
+.pagetitle {
+    color: #FFFFFF;
+    font-family: "Times New Roman", Times, serif;
+    float: left;
+    margin: 30px 0px 30px 20px;
+}
+
+form {
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-content label{
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-content table{
+    text-align: center;
+    border-spacing: 6px;
+}
+
+.main-content {
+    min-height: calc(100vh - 240px);
+    margin: 15px;
+}
+
+#banner-bottom {
+    background:#031b51;
+    height: 60px;
+    width: 100%;
+}
+
+input[type=submit]{
+    background: #696969;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 30px;
+    border-radius: 5px;
+    border: 1p solid #999;
+}
+
+.footer {
+    color: #ffffff;
+    float: left;
+    font-size: 12;
+    font-stretch: semi-expanded;
+    margin: 20px 0px 10px 20px;
+    font-size: 9;
+}
+
+#banner-bottom ul {
+    float: right;
+    list-style-type:none;
+    margin:0px;
+}
+
+#banner-bottom li {
+    display: inline;
+}
+
+#banner-bottom img {
+    width: 30px;
+    height: 30px;
+    margin: 15px 20px 0px 0px;
+}
+.btn btn-default pull-right {
+color: #07bfed
+}
+.ext btn btn-info pull-right {
+  color: #07bfed
+}
+.previous btn btn-info pull-left {
+color: #07bfed
+}
+input [type=checkbox] {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px solid #555;
+  font-size: 20px;
+}
+input [type=checkbox]: checked {
+  background: #abd;
+}
+.checkbox {
+  font-size: 22px;
+  font-family: Georgia;
+}
+.collapse {
+  font-size: 22px;
+  font-family: Georgia;
+}
+#result li {
+  margin: 15px 30px 0px 10px;
+  font-size: 18px;
+}
+#result a {
+  color: #0a4096;
+  font-size: 16px
+}
+.no_results {
+  font-size: 20px;
+  text-align: center;
+}
+.detail {
+  font-size: 20px;
+  margin: 15px 30px 20px 10px;
+}
+.guide {
+  font-size: 16px;
+  margin: 15px 30px 20px 10px;
+}
+#Welcome {
+  font-size: 45px;
+  text-align: center;
+  margin-top:20px;
+}
+#h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-top:20px;
+}
+.inquiries_list {
+  font-size: 20px;
+  text-align: left;
+  margin-top:10px;
+}
+A:hover {
+  text-decoration: none;
+  color: #0e19b2;
+}
+#softwarename {
+  font-size: 30px;
+  font-family: Georgia, serif;
+  margin-left: 10px;
+}

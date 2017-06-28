@@ -5,18 +5,18 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	{% if rec_result %}
 		<div style="margin-left:40px">
-  		<h2>Availabe Digital Tools</h2>
+  		<h2>Recommended Tools</h2>
 			<hr>
 
 			<ol id="result">
 				{% for res in rec_result%}
 					<div class="col-md-6">
 						<li>
-							<p>{{res.software_name}}</p>
+							<p><a href="{% url 'detail' res.id %}">{{res.software_name}}</a></p>
 							{% if res.image %}
-								<img src="{{res.image.url}}" width="304" height="236"/> <br />
+								<a href="{% url 'detail' res.id %}"><img src="{{res.image.url}}" width="304" height="236"/></a> <br />
 							{% endif %}
-							<a href="{% url 'detail' res.id %}" target="_blank">see more detail</a>
+							<a href="{% url 'detail' res.id %}" target="_blank">View Tool Details</a>
 							<hr>
 						</li>
 					</div>

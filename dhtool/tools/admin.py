@@ -28,7 +28,13 @@ class MappingToolsAdmin(admin.ModelAdmin):
     ]
     inlines = [Penn_guide_urlInline, Other_guide_urlInline]
 
+class InquiryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['name']}),
+        (None, {'fields': ['desc']}),
+    ]
+
 admin.site.register(MappingTools, MappingToolsAdmin)
-admin.site.register(Inquiry)
+admin.site.register(Inquiry, InquiryAdmin)
 admin.site.register(UserStories)
 admin.site.register(Page)

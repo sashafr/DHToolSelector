@@ -9,6 +9,7 @@ from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 class Inquiry(models.Model):
 #	id = models.AutoField(primary_key=True)
 	name = models.CharField(max_length=100, default="", blank=True, null=True)
+        desc = models.CharField(max_length = 256, blank = True, null = True)
 	def __str__(self):
 		return self.name
 	class Meta:
