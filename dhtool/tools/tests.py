@@ -11,13 +11,15 @@ def create_inquiry(inquiry_name):
     return Inquiry.objects.create(name=inquiry_name)
 
 def create_page(title, number, text, related_inquiry):
-    return Page.objects.create(page_title=title, page_number=number, off_ramp_text=text, inquiry=related_inquiry)
+    return Page.objects.create(page_title=title, page_number=number, off_ramp_text=text, 
+        inquiry=related_inquiry)
 
 def create_mapping_tool(name, penn_subscription):
     return MappingTools.objects.create(software_name=name, is_penn_subscription=penn_subscription)
 
 def create_user_story(text, related_inquiry, related_page, node):
-    return UserStories.objects.create(story_text=text, inquiry=related_inquiry, page=related_page, parent=node)
+    return UserStories.objects.create(story_text=text, inquiry=related_inquiry, page=related_page, 
+        parent=node)
 
 class UserStoriesMPTTModelTestCase(TestCase):
     def test_mptt_model(self):
@@ -71,9 +73,11 @@ class InquiryViewTestCase(TestCase):
         new_inquiry = create_inquiry('Digital Humanity Tool Selector')
         response = self.client.get(reverse('inquiry'))
         self.assertEqual(response.status_code, 200)
-        self.assertQuerysetEqual(response.context['inquiry_all'], ['<Inquiry: Digital Humanity Tool Selector>'])
+        self.assertQuerysetEqual(response.context['inquiry_all'], 
+            ['<Inquiry: Digital Humanity Tool Selector>'])
         #the link to page.html should be include in the response
-        inquiry_url = '<a href="%s">%s</a>' % (reverse('page', args=(new_inquiry.id,)), new_inquiry.name)
+        inquiry_url = '<a href="%s">%s</a>' % (reverse('page', args=(new_inquiry.id,)), 
+            new_inquiry.name)
         self.assertContains(response, inquiry_url, html=True)
 
 class PageViewTestCase(TestCase):

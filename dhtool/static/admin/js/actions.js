@@ -6,7 +6,7 @@
     $.fn.actions = function(opts) {
         var options = $.extend({}, $.fn.actions.defaults, opts);
         var actionCheckboxes = $(this);
-        var list_editable_changed = false;
+        var listEditableChanged = false;
         var showQuestion = function() {
             $(options.acrossClears).hide();
             $(options.acrossQuestions).show();
@@ -43,11 +43,11 @@
             var sel = $(actionCheckboxes).filter(":checked").length;
             // data-actions-icnt is defined in the generated HTML
             // and contains the total amount of objects in the queryset
-            var actions_icnt = $('.action-counter').data('actionsIcnt');
+            var actionsIcnt = $('.action-counter').data('actionsIcnt');
             $(options.counterContainer).html(interpolate(
             ngettext('%(sel)s of %(cnt)s selected', '%(sel)s of %(cnt)s selected', sel), {
                 sel: sel,
-                cnt: actions_icnt
+                cnt: actionsIcnt
             }, true));
             $(options.allToggle).prop("checked", function() {
                 var value;
@@ -110,11 +110,12 @@
             updateCounter();
         });
         $('form#changelist-form table#result_list tr').find('td:gt(0) :input').change(function() {
-            list_editable_changed = true;
+            listEditableChanged = true;
         });
         $('form#changelist-form button[name="index"]').click(function(event) {
-            if (list_editable_changed) {
-                return confirm(gettext("You have unsaved changes on individual editable fields. If you run an action, your unsaved changes will be lost."));
+            if (listEditableChanged) {
+                return confirm(gettext(`You have unsaved changes on individual editable fields. If
+                    you run an action, your unsaved changes will be lost.`));
             }
         });
         $('form#changelist-form input[name="_save"]').click(function(event) {
@@ -125,10 +126,14 @@
                 }
             });
             if (action_changed) {
-                if (list_editable_changed) {
-                    return confirm(gettext("You have selected an action, but you haven't saved your changes to individual fields yet. Please click OK to save. You'll need to re-run the action."));
+                if (listEditableChanged) {
+                    return confirm(gettext(`You have selected an action, but you haven't saved your 
+                        changes to individual fields yet. Please click OK to save. You'll need to 
+                        re-run the action.`));
                 } else {
-                    return confirm(gettext("You have selected an action, and you haven't made any changes on individual fields. You're probably looking for the Go button rather than the Save button."));
+                    return confirm(gettext(`You have selected an action, and you haven't made any 
+                        changes on individual fields. You're probably looking for the Go button 
+                        rather than the Save button.`));
                 }
             }
         });

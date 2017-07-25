@@ -37,7 +37,8 @@ depends on core.js for utility functions like removeChildren or quickElement
         },
         getDaysInMonth: function(month, year) {
             var days;
-            if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+            if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || 
+                month === 10 || month === 12) {
                 days = 31;
             }
             else if (month === 4 || month === 6 || month === 9 || month === 11) {
@@ -162,7 +163,8 @@ depends on core.js for utility functions like removeChildren or quickElement
     }
     Calendar.prototype = {
         drawCurrent: function() {
-            CalendarNamespace.draw(this.currentMonth, this.currentYear, this.div_id, this.callback, this.selected);
+            CalendarNamespace.draw(this.currentMonth, this.currentYear, this.div_id, 
+                this.callback, this.selected);
         },
         drawDate: function(month, year, selected) {
             this.currentMonth = month;

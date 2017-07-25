@@ -2,7 +2,8 @@
 
 // basic browser identification & version
 var isOpera = (navigator.userAgent.indexOf("Opera") >= 0) && parseFloat(navigator.appVersion);
-var isIE = ((document.all) && (!isOpera)) && parseFloat(navigator.appVersion.split("MSIE ")[1].split(";")[0]);
+var isIE = ((document.all) && (!isOpera)) && 
+    parseFloat(navigator.appVersion.split("MSIE ")[1].split(";")[0]);
 
 // Cross-browser event handlers.
 function addEvent(obj, evType, fn) {
@@ -42,7 +43,6 @@ function cancelEventPropagation(e) {
     }
 }
 
-// quickElement(tagType, parentReference [, textInChildNode, attribute, attributeValue ...]);
 function quickElement() {
     'use strict';
     var obj = document.createElement(arguments[0]);
@@ -150,7 +150,8 @@ function findPosY(obj) {
     };
 
     Date.prototype.getHourMinuteSecond = function() {
-        return this.getTwoDigitHour() + ':' + this.getTwoDigitMinute() + ':' + this.getTwoDigitSecond();
+        return this.getTwoDigitHour() + ':' + this.getTwoDigitMinute() + ':' + 
+        this.getTwoDigitSecond();
     };
 
     Date.prototype.getFullMonthName = function() {
@@ -203,12 +204,12 @@ function findPosY(obj) {
     };
 
     String.prototype.strptime = function(format) {
-        var split_format = format.split(/[.\-/]/);
+        var splitFormat = format.split(/[.\-/]/);
         var date = this.split(/[.\-/]/);
         var i = 0;
         var day, month, year;
-        while (i < split_format.length) {
-            switch (split_format[i]) {
+        while (i < splitFormat.length) {
+            switch (splitFormat[i]) {
                 case "%d":
                     day = date[i];
                     break;
