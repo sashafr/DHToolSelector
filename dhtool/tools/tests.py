@@ -28,15 +28,15 @@ class UserStoriesMPTTModelTestCase(TestCase):
         # create the root of the tree
         root = create_user_story('Root', new_inquiry, new_page, None)
         # create two children of the root
-        childA = create_user_story('Child A', new_inquiry, new_page, root)
-        childB = create_user_story('Child B', new_inquiry, new_page, root)
+        child_a = create_user_story('Child A', new_inquiry, new_page, root)
+        child_b = create_user_story('Child B', new_inquiry, new_page, root)
         self.assertEqual(root.level, 0)
-        self.assertEqual(childA.level, 1)
-        self.assertEqual(childB.level, 1)
+        self.assertEqual(child_a.level, 1)
+        self.assertEqual(child_b.level, 1)
         self.assertQuerysetEqual(root.get_descendants(),
                                 ['<UserStories: Child A>', '<UserStories: Child B>'])
         #create a grandchild
-        grandchild = create_user_story('Grandchild', new_inquiry, new_page, childA)
+        grandchild = create_user_story('Grandchild', new_inquiry, new_page, child_a)
         self.assertEqual(grandchild.level, 2)
         #the tree_id of the grandchild should be the same as the tree_id of the root
         self.assertEqual(grandchild.tree_id, root.tree_id)
@@ -130,12 +130,12 @@ class PageViewTestCase(TestCase):
 
     def test_page_with_user_story(self):
         new_page = create_page('default page', 1, 'no information', self.new_inquiry)
-        storyA = create_user_story('Story A', self.new_inquiry, new_page, None)
+        story_a = create_user_story('Story A', self.new_inquiry, new_page, None)
         url = reverse('page', args=(self.new_inquiry.id,))
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Story A")
-        checkbox = '<input type="checkbox" name="story" value="%d" autocomplete="off">' % storyA.id
+        checkbox = '<input type="checkbox" name="story" value="%d" autocomplete="off">' % story_a.id
         self.assertContains(response, checkbox)
 
 class ResultViewTestCase(TestCase):
@@ -176,22 +176,22 @@ class ResultViewTestCase(TestCase):
         self.assertContains(response, detail_url)
 
     def test_filter_tools_by_stories(self):
-        toolA = create_mapping_tool('ToolA', True)
-        toolB = create_mapping_tool('ToolB', True)
-        self.story.recommendation.add(toolA)
-        self.story.recommendation.add(toolB)
+        tool_a = create_mapping_tool('ToolA', True)
+        tool_b = create_mapping_tool('ToolB', True)
+        self.story.recommendation.add(tool_a)
+        self.story.recommendation.add(tool_b)
 
-        toolC = create_mapping_tool('ToolC', True)
-        anotherStory = create_user_story('Story B', self.new_inquiry, self.new_page, None)
-        anotherStory.recommendation.add(toolB)
-        anotherStory.recommendation.add(toolC)
+        tool_c = create_mapping_tool('ToolC', True)
+        another_story = create_user_story('Story B', self.new_inquiry, self.new_page, None)
+        another_story.recommendation.add(tool_b)
+        another_story.recommendation.add(tool_c)
 
-        url = "%s?story=%d&story=%d" % (reverse('result'), self.story.id, anotherStory.id)
+        url = "%s?story=%d&story=%d" % (reverse('result'), self.story.id, another_story.id)
         response = self.client.get(url)
         self.assertQuerysetEqual(response.context['rec_result'], ['<MappingTools: ToolB>'])
-        self.assertContains(response, toolB.software_name)
-        self.assertNotContains(response, toolA.software_name)
-        self.assertNotContains(response, toolC.software_name)
+        self.assertContains(response, tool_b.software_name)
+        self.assertNotContains(response, tool_a.software_name)
+        self.assertNotContains(response, tool_c.software_name)
 
 class DetailViewTestCase(TestCase):
     def test_invalid_tool_id(self):

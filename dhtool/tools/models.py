@@ -28,7 +28,7 @@ class Tools(models.Model):
 	def __str__(self):
 		return self.software_name
 	class Meta:
-		verbose_name_plural = "mapping tools"
+		verbose_name_plural = "tools"
 
 class PennGuideURL(models.Model):
 	link = models.URLField(max_length = 256, blank=True, null = True)
