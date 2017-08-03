@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-from .models import MappingTools,Page
+from .models import Tools, Page
 from .models import UserStories
 from django.template import loader
 from .models import Inquiry
@@ -19,7 +19,7 @@ def inquiry(request):
 	return HttpResponse(template.render(context, request))
 
 def detail(request, id):
-	select_tool = get_object_or_404(MappingTools, pk = id)
+	select_tool = get_object_or_404(Tools, pk = id)
 	template = loader.get_template('tools/detail.html')
 
 	context = {
@@ -29,7 +29,7 @@ def detail(request, id):
 
 def result(request):
 	story_ids = request.GET.getlist('story')
-	rec_result = MappingTools.objects.order_by('id')
+	rec_result = Tools.objects.order_by('id')
 
 	for story_id in story_ids:
 		rec_result = rec_result.filter(userstories=story_id)
