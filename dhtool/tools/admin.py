@@ -37,6 +37,9 @@ class InquiryAdmin(admin.ModelAdmin):
         (None, {'fields': ['name']}),
         (None, {'fields': ['desc']}),
     ]
+    inlines = [
+        UserStoriesInline,
+    ]
 
 admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
