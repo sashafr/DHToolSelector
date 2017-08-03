@@ -13,6 +13,10 @@ class PennGuideURLInline(admin.StackedInline):
 class OtherGuideURLInline(admin.StackedInline):
     model = OtherGuideURL
     extra = 0
+    
+class UserStoriesInline(admin.StackedInline):
+    model = UserStories
+    extra = 1
 
 class ToolsAdmin(admin.ModelAdmin):
     fieldsets = [
