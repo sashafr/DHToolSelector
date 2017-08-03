@@ -11,8 +11,7 @@
 	<div class="container">
 			{% if select_tool.software_link %}
 				<div class="container">
-					<h2>{{select_tool.software_name}}</h2>
-					<a href="{{select_tool.software_link}}" class="btn btn-info" role="button">Click here to link</a>
+					<a href="{{select_tool.software_link}}"><h2>{{select_tool.software_name}}</h2></a>
 				</div>
 			{% else %}
 				<h2>{{select_tool.software_name}}</h2>
