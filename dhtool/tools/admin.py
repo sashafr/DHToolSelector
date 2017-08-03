@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 # Register your models here.
-from .models import Inquiry, Page, MappingTools, UserStories, PennGuideURL, OtherGuideURL
+from .models import Inquiry, Page, Tools, UserStories, PennGuideURL, OtherGuideURL
 
 class PennGuideURLInline(admin.StackedInline):
     model = PennGuideURL
@@ -14,7 +14,7 @@ class OtherGuideURLInline(admin.StackedInline):
     model = OtherGuideURL
     extra = 0
 
-class MappingToolsAdmin(admin.ModelAdmin):
+class ToolsAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['software_name']}),
         (None, {'fields': ['software_link']}),
@@ -34,7 +34,7 @@ class InquiryAdmin(admin.ModelAdmin):
         (None, {'fields': ['desc']}),
     ]
 
-admin.site.register(MappingTools, MappingToolsAdmin)
+admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
 admin.site.register(UserStories)
 admin.site.register(Page)
