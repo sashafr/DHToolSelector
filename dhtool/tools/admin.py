@@ -45,6 +45,7 @@ class PageAdmin(admin.ModelAdmin):
     inlines = [
         UserStoriesInline,
     ]
+    list_display = ('page_title', 'page_number', 'inquiry')
 
 admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
