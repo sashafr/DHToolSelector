@@ -16,7 +16,7 @@ class OtherGuideURLInline(admin.StackedInline):
     
 class UserStoriesInline(admin.StackedInline):
     model = UserStories
-    extra = 1
+    extra = 1z
 
 class ToolsAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -37,6 +37,11 @@ class InquiryAdmin(admin.ModelAdmin):
         (None, {'fields': ['name']}),
         (None, {'fields': ['desc']}),
     ]
+    inlines = [
+        UserStoriesInline,
+    ]
+    
+class PageAdmin(admin.ModelAdmin):
     inlines = [
         UserStoriesInline,
     ]
