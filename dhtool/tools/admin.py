@@ -16,7 +16,7 @@ class OtherGuideURLInline(admin.StackedInline):
     
 class UserStoriesInline(admin.StackedInline):
     model = UserStories
-    extra = 1z
+    extra = 1
 
 class ToolsAdmin(admin.ModelAdmin):
     fieldsets = [
