@@ -49,4 +49,4 @@ class PageAdmin(admin.ModelAdmin):
 admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
 admin.site.register(UserStories)
-admin.site.register(Page)
+admin.site.register(Page, PageAdmin)
