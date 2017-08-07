@@ -1,5 +1,10 @@
 # DHtoolsSelector
 DHtoolsSelector for Penn Libraries
+
+[Click here to try the beta version](http://toolselector.pennds.org)
+
+*If you are interested in joining the beta testing group, email sashafr@upenn.edu*
+
 ## Description
 This application allows users to search for digital humanity tools based on their needs. The major features include:
 * allowing users to choose from different tool projects;
@@ -168,3 +173,5 @@ You can refer to the following links for more information about how to set up a 
   https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi
 
   https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-apache-and-mod_wsgi-on-ubuntu-16-04
+
+**Huge thank you to the Penn Libraries Digital Scholarship Interns who worked on this project: Haoran Shao, Jinyun Mu, and Sophia Heiser**
