@@ -6,7 +6,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-WSK/settings.py*
+dhtool/dhtool/settings.py*
 
 # C extensions
 *.so
@@ -57,7 +57,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-migrations/*
+dhtool/tools/migrations/*
 
 # Flask stuff:
 instance/
@@ -93,3 +93,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Junk
+.DS_Store
