@@ -31,6 +31,7 @@ class ToolsAdmin(admin.ModelAdmin):
         ('Notes', {'fields': ['notes'], 'classes': ['collapse']}),
     ]
     inlines = [PennGuideURLInline, OtherGuideURLInline]
+    search_fields = ['software_name']
 
 class InquiryAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -46,9 +47,11 @@ class PageAdmin(admin.ModelAdmin):
         UserStoriesInline,
     ]
     list_display = ('page_title', 'page_number', 'inquiry')
+    list_filter = ('inquiry', 'page_number')
     
 class UserStoriesAdmin(admin.ModelAdmin):
     list_display = ('story_text', 'inquiry', 'page')
+    list_filter = ('inquiry', 'page')
 
 admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
