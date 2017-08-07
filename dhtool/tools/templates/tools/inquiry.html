@@ -19,7 +19,7 @@
 					<div class="col-sm-4">
 						<p class="inquiries_list" style="text-align:left; font-size:30px">{{inquiry.name}}</p>
 						<p style="text-align:left">{{inquiry.desc}}</p>
-						<button type="button" class="btn btn-info"><a id="inquiries_link" href="{% url 'page' inquiry.id %}">Get Started</a></button>
+						<a id="inquiries_link" href="{% url 'page' inquiry.id %}"><button type="button" class="btn btn-info">Get Started</button></a>
 					</div>
 				{% endfor %}
 			</div>
